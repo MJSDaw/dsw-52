@@ -1,9 +1,9 @@
 <?php
     class Electrodomestico {
-        private const const_precioBase = 100;
+        protected const const_precioBase = 100;
         protected const const_color = "blanco";
         protected const const_consumoEnergetico = "F";
-        private const const_peso = 5;
+        protected const const_peso = 5;
 
         protected $precioBase;
         protected $color;

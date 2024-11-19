@@ -1,0 +1,3 @@
+<?php
+    $tv = new Television();
+?>

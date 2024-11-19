@@ -1,17 +1,17 @@
 <?php
     class Electrodomestico {
         private const const_precioBase = 100;
-        private const const_color = "blanco";
-        private const const_consumoEnergetico = "F";
+        protected const const_color = "blanco";
+        protected const const_consumoEnergetico = "F";
         private const const_peso = 5;
 
-        private $precioBase;
-        private $color;
-        private $consumoEnergetico;
-        private $peso;
+        protected $precioBase;
+        protected $color;
+        protected $consumoEnergetico;
+        protected $peso;
 
         public function __construct(float $pB, string $c, string $cE, float $p){
-            if(func_num_args() === 3){
+            if(func_num_args() === 4){
                 $this->precioBase = $pB;
                 $this->color = $this->comprobarColor($c);
                 $this->consumoEnergetico = $this->comprobarConsumoEnergetico($cE);
@@ -21,6 +21,8 @@
                 $this->color = self::const_color;
                 $this->consumoEnergetico = self::const_consumoEnergetico;
                 $this->peso = self::const_peso;
+            } else {
+                die("Error: error en el número de parámetros");
             }
         }
 
@@ -88,6 +90,8 @@
             } else if($this->consumoEnergetico >= 80){
                 $total += 100;
             }
+
+            return $total;
         }
     }
 ?>
